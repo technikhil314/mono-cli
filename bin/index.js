@@ -1,1 +1,2 @@
-console.log("log from ekam-cli")
+#! /usr/bin/env node
+console.log("log from 1command")

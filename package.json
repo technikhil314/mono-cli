@@ -1,21 +1,32 @@
 {
-  "name": "ekam-cli",
-  "version": "0.0.0-beta.0",
-  "description": "Project based aliases for streamline your build and development flow.",
+  "name": "1command",
+  "version": "0.0.0-alpha.0",
+  "description": "One cli for all project needs. A cli that does basic tasks on any project.",
   "main": "index.js",
   "bin": {
-    "one": "bin/index.js"
+    "1command": "bin/index.js"
+  },
+  "engines": {
+    "node": ">=12"
   },
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/technikhil314/1cli.git"
+    "url": "git+https://github.com/technikhil314/1command.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "cli",
+    "build",
+    "clean",
+    "test",
+    "start",
+    "1command",
+    "install"
+  ],
+  "author": "Nikhil Mehta<nikhil.001mehta@gmail.com>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/technikhil314/1cli/issues"
+    "url": "https://github.com/technikhil314/1command/issues"
   },
-  "homepage": "https://github.com/technikhil314/1cli#readme"
+  "homepage": "https://technikhil314.netlify.app/docs/1command/introduction"
 }

@@ -1,4 +1,4 @@
-# ekam-cli
+# 1command
 
 Project based aliases for streamline your build and development flow.
 
@@ -13,7 +13,7 @@ Right now when you are about run/build a new project you have to do the followin
 # Solution
 
 1. Add this code to your favourite shell init script
-2. install ekam-cli using `npm install ekam-cli`
+2. install 1command using `npm install 1command`
 3. and then run following commands for each described task
 
    | command | Purpose                            | Supports                     |
