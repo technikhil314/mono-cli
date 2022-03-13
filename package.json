@@ -1,0 +1,21 @@
+{
+  "name": "ekam-cli",
+  "version": "0.0.0-beta.0",
+  "description": "Project based aliases for streamline your build and development flow.",
+  "main": "index.js",
+  "bin": {
+    "one": "bin/index.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/technikhil314/1cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/technikhil314/1cli/issues"
+  },
+  "homepage": "https://github.com/technikhil314/1cli#readme"
+}
