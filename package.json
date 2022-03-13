@@ -1,6 +1,6 @@
 {
   "name": "1command",
-  "version": "0.0.0-alpha.0",
+  "version": "0.0.0-alpha.1",
   "description": "One cli for all project needs. A cli that does basic tasks on any project.",
   "main": "index.js",
   "bin": {
