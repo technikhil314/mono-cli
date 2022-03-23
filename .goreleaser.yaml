@@ -4,9 +4,7 @@ before:
     - go mod tidy
     - go generate ./...
 builds:
-  - env:
-      - CGO_ENABLED=0
-    goos:
+  - goos:
       - linux
       - windows
       - darwin
