@@ -28,4 +28,4 @@ jobs:
           distribution: goreleaser
           args: release --rm-dist -f ./.goreleaser-non-mac.yaml
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
