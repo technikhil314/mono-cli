@@ -10,7 +10,7 @@ builds:
       - linux
       - windows
       - darwin
-binary: mono
+    binary: mono
 archives:
   - replacements:
       darwin: Darwin
