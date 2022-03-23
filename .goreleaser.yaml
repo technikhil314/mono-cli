@@ -33,7 +33,7 @@ brews:
   - name: mono-cli
     tap:
       owner: technikhil314
-      name: homebrew-mono-cli
+      name: homebrew-mono
       branch: main
     commit_author:
       name: goreleaser
