@@ -7,6 +7,7 @@ on:
 
 jobs:
   release-non-mac:
+    permissions: write-all
     name: create release and publish brew formula
     runs-on: ${{ matrix.os }}
     strategy:
