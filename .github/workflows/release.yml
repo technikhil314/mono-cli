@@ -1,4 +1,5 @@
 name: Release on all tags
+
 on:
   push:
     tags:
