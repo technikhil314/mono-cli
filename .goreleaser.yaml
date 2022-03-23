@@ -2,17 +2,15 @@
 before:
 builds:
   - env:
-      # - CGO_ENABLED=0
+      - CGO_ENABLED=0
     goos:
       - darwin
       - linux
-      - windows
     binary: mono
 archives:
   - replacements:
       darwin: Darwin
       linux: Linux
-      windows: Windows
       386: i386
       amd64: x86_64
 checksum:
@@ -25,6 +23,7 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
+      - "^ci:"
 brews:
   - name: mono-cli
     tap:
@@ -40,5 +39,7 @@ brews:
     homepage: "https://technikhil314.netlify.app/docs/mono-cli/introduction"
     description: "Opinionated command line tool for managing all your project tasks."
     license: "MIT"
+    test: |
+      system "#{bin}/mono --version"
     install: |
       bin.install "mono"

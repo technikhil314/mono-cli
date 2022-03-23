@@ -21,11 +21,7 @@ jobs:
       - name: Set up Go 1.18
         uses: actions/setup-go@v2
 
-      - name: install llvn
-        run: |
-          arch=arm64 brew install llvm
-
-      - name: Run GoReleaser for non mac
+      - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
         with:
           distribution: goreleaser
