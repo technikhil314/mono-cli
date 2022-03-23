@@ -7,8 +7,11 @@ on:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
     name: create release and publish brew formula
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macOS-10.14, ubuntu-18.04]
 
     steps:
       - uses: actions/checkout@v2
