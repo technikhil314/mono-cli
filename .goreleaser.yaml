@@ -33,6 +33,7 @@ brews:
       name: homebrew-mono-cli
       branch: main
     download_strategy: CurlDownloadStrategy
+    url_template: "https://www.github.com/technikhil314/mono-cli/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     commit_author:
       name: goreleaser
       email: goreleaser@technikhil314.com
