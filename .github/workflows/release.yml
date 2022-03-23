@@ -1,4 +1,4 @@
-name: Release
+name: Release on all tags
 on:
   push:
     tags:
@@ -18,13 +18,10 @@ jobs:
           go-version: 1.18
         id: go
 
-      - name: Install goreleaser
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v2
+        with:
+          distribution: goreleaser
+          args: release --rm-dist
         env:
-          GO111MODULE: on
-        run: go install github.com/goreleaser/goreleaser@latest
-
-      - name: Release using goreleaser
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        run: |
-          goreleaser release --rm-dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
