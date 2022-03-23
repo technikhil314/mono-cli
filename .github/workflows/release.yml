@@ -21,6 +21,10 @@ jobs:
       - name: Set up Go 1.18
         uses: actions/setup-go@v2
 
+      - name: change go mod version
+        run: |
+          go mod edit -go 1.18
+
       - name: Run GoReleaser for non mac
         uses: goreleaser/goreleaser-action@v2
         with:
