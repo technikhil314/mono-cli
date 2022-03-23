@@ -6,12 +6,12 @@ on:
       - "*"
 
 jobs:
-  release:
+  release-non-mac:
     name: create release and publish brew formula
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macOS-10.14, ubuntu-18.04]
+        os: [ubuntu-18.04]
 
     steps:
       - uses: actions/checkout@v2
@@ -25,6 +25,6 @@ jobs:
         uses: goreleaser/goreleaser-action@v2
         with:
           distribution: goreleaser
-          args: release --rm-dist
+          args: release --rm-dist -f ./.goreleaser-non-mac.yaml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

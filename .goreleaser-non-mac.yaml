@@ -1,0 +1,44 @@
+# Make sure to check the documentation at https://goreleaser.com
+before:
+  hooks:
+    - go mod tidy
+    - go generate ./...
+builds:
+  - goos:
+      - linux
+      - windows
+    binary: mono
+archives:
+  - replacements:
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+checksum:
+  name_template: "checksums.txt"
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+brews:
+  - name: mono-cli
+    tap:
+      owner: technikhil314
+      name: homebrew-mono-cli
+      branch: main
+    download_strategy: CurlDownloadStrategy
+    commit_author:
+      name: goreleaser
+      email: goreleaser@technikhil314.com
+    commit_msg_template: "Brew formula update for {{ .ProjectName }} version {{ .Tag }}"
+    folder: Formula
+    homepage: "https://technikhil314.netlify.app/docs/mono-cli/introduction"
+    description: "Opinionated command line tool for managing all your project tasks."
+    license: "MIT"
+    install: |
+      bin.install "mono"

@@ -5,8 +5,6 @@ before:
     - go generate ./...
 builds:
   - goos:
-      - linux
-      - windows
       - darwin
     binary: mono
 archives:
