@@ -36,7 +36,7 @@ Right now to run new project you have to do the following
 ### Using brew
 
 ```bash
- brew install technikhil314/homebrew-mono/mono-cli
+brew install technikhil314/mono-cli/mono-cli
 ```
 
 ### Manual
