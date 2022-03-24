@@ -33,10 +33,30 @@ Right now to run new project you have to do the following
 
 # installation
 
+### Using brew
+
+```bash
+ brew install technikhil314/homebrew-mono/mono-cli
+```
+
+### Manual
+
+Download latest and specific artifact for your OS and arch from the [relases](/releases) section.
+
+and run following commands using any POSIX shell viz sh, bash, ksh, fish, zsh etc
+
+#### For UNIX like OS
+
+```bash
+tar -xvzf <path to the zip you downloaded>
+cp ./mono /usr/local/bin
+```
+
 # Usage
 
 1. Add this code to your favourite shell init script
-2. and then run following commands for each described task
+2. This cli follows a Unix standard command pattern so any arguments after `--` will be passed further down to actual commands like `mvn`, `npm` etc
+3. and then run following commands for each described task
 
    | command      | Purpose                            | Supports                     | Depends on                                             | Default                                     |
    | ------------ | ---------------------------------- | ---------------------------- | ------------------------------------------------------ | ------------------------------------------- |
