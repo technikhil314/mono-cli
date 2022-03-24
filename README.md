@@ -58,12 +58,12 @@ cp ./mono /usr/local/bin
 2. This cli follows a Unix standard command pattern so any arguments after `--` will be passed further down to actual commands like `mvn`, `npm` etc
 3. and then run following commands for each described task
 
-   | command      | Purpose                            | Supports                     | Depends on                                             | Default                                     |
-   | ------------ | ---------------------------------- | ---------------------------- | ------------------------------------------------------ | ------------------------------------------- |
-   | mono install | install dependancies               | npm, yarn, pnpn, lerna       | lock files or monorepo config files                    | if no lock file found then defaults to pnpm |
-   | mono build   | build your project                 | webpack, vite and frameworks | framework or bundler <br/> config file in project root | defaults to `npm run build`                 |
-   | mono clean   | cleans your build directory        | webpack, vite and frameworks | framework or bundler <br/> config file in project root | defaults to `npm run clean`                 |
-   | mono start   | start your development environment | webpack, vite and frameworks | framework or bundler <br/> config file in project root | defaults to `npm run start`                 |
+   | command      | Purpose                            | Supports                     | Depends on                                             | Default                                    |
+   | ------------ | ---------------------------------- | ---------------------------- | ------------------------------------------------------ | ------------------------------------------ |
+   | mono install | install dependancies               | npm, yarn, pnpn, lerna       | lock files or monorepo config files                    | if no lock file found then defaults to npm |
+   | mono build   | build your project                 | webpack, vite and frameworks | framework or bundler <br/> config file in project root | defaults to `npm run build`                |
+   | mono clean   | cleans your build directory        | webpack, vite and frameworks | framework or bundler <br/> config file in project root | defaults to `npm run clean`                |
+   | mono start   | start your development environment | webpack, vite and frameworks | framework or bundler <br/> config file in project root | defaults to `npm run start`                |
 
 # License
 
