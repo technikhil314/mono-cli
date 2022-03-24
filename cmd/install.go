@@ -1,40 +1,84 @@
-/*
-Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-
-*/
 package cmd
 
 import (
 	"fmt"
+	"os"
+	"os/exec"
 
 	"github.com/spf13/cobra"
+	"github.com/ttacon/chalk"
 )
 
-// installCmd represents the install command
+var infoStyle = chalk.Yellow.NewStyle().WithBackground(chalk.Black)
+
 var installCmd = &cobra.Command{
 	Use:   "install",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Installs all your dependancies based on package manager you/your team is using on this project",
+	Long: `This command detects which package manager you or your team members are using.
+based on presence of package manager lock files. and will use the same package manager 
+if it is not able to detect then it will fallback to npm as pacakge manager	
+`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("install called")
+		_, err := os.Getwd()
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+		executeMonorepoManagers()
+		executePackageManagers()
+		executeDefault()
 	},
+}
+
+func executeMonorepoManagers() {
+	cwd, _ := os.Getwd()
+	monorepoManagerFile := fmt.Sprint(cwd, "/lerna.json")
+	_, statErr := os.Stat(monorepoManagerFile)
+	if statErr == nil {
+		fmt.Printf("%s%s", infoStyle, "running lerna bootstrap\n")
+		exec.Command("npx lerna bootstrap")
+		os.Exit(0)
+	}
+}
+
+func executePackageManagers() {
+	cwd, _ := os.Getwd()
+	lockfilePath := fmt.Sprint(cwd, "/package-lock.json")
+	_, statErr := os.Stat(lockfilePath)
+	if statErr == nil {
+		fmt.Printf("%s%s", infoStyle, "running npm install\n")
+		exec.Command("npm install")
+		os.Exit(0)
+	}
+	lockfilePath = fmt.Sprint(cwd, "/yarn.lock")
+	_, statErr = os.Stat(lockfilePath)
+	if statErr == nil {
+		fmt.Printf("%s%s", infoStyle, "running yarn install\n")
+		exec.Command("yarn install")
+		os.Exit(0)
+	}
+	lockfilePath = fmt.Sprint(cwd, "/pnpm-lock.yaml")
+	_, statErr = os.Stat(lockfilePath)
+	if statErr == nil {
+		fmt.Printf("%s%s", infoStyle, "running pnpm install\n")
+		exec.Command("pnpm install")
+		os.Exit(0)
+	}
+}
+
+func executeDefault() {
+	cwd, _ := os.Getwd()
+	packageManagerFile := fmt.Sprint(cwd, "/package.json")
+	_, statErr := os.Stat(packageManagerFile)
+	if statErr == nil {
+		fmt.Println("%s%s", infoStyle, "No lock file found. Running npm install")
+		exec.Command("npm install")
+		os.Exit(0)
+	}
+	fmt.Printf("%sNo relevant files found in %s\n", chalk.Red, cwd)
+	os.Exit(1)
 }
 
 func init() {
 	rootCmd.AddCommand(installCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// installCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// installCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
