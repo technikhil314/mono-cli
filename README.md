@@ -41,7 +41,7 @@ brew install technikhil314/mono-cli/mono-cli
 
 ### Manual
 
-Download latest and specific artifact for your OS and arch from the [relases](/releases) section.
+Download latest and specific artifact for your OS and arch from the [releases](https://github.com/technikhil314/mono-cli/releases) section.
 
 and run following commands using any POSIX shell viz sh, bash, ksh, fish, zsh etc
 
