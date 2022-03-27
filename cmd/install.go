@@ -3,13 +3,14 @@ package cmd
 import (
 	"fmt"
 	"os"
-	"os/exec"
 
 	"github.com/spf13/cobra"
+	"github.com/technikhil314/mono-cli/utils"
 	"github.com/ttacon/chalk"
 )
 
 var infoStyle = chalk.Yellow.NewStyle().WithBackground(chalk.Black)
+var cwd, cwdErr = os.Getwd()
 
 var installCmd = &cobra.Command{
 	Use:   "install",
@@ -19,11 +20,6 @@ based on presence of package manager lock files. and will use the same package m
 if it is not able to detect then it will fallback to npm as pacakge manager	
 `,
 	Run: func(cmd *cobra.Command, args []string) {
-		_, err := os.Getwd()
-		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
-		}
 		executeMonorepoManagers()
 		executePackageManagers()
 		executeDefault()
@@ -31,49 +27,41 @@ if it is not able to detect then it will fallback to npm as pacakge manager
 }
 
 func executeMonorepoManagers() {
-	cwd, _ := os.Getwd()
 	monorepoManagerFile := fmt.Sprint(cwd, "/lerna.json")
 	_, statErr := os.Stat(monorepoManagerFile)
 	if statErr == nil {
 		fmt.Printf("%s%s", infoStyle, "running lerna bootstrap\n")
-		exec.Command("npx lerna bootstrap")
-		os.Exit(0)
+		utils.ExecuteCommand("npx", "lerna", "bootstrap")
 	}
 }
 
 func executePackageManagers() {
-	cwd, _ := os.Getwd()
 	lockfilePath := fmt.Sprint(cwd, "/package-lock.json")
 	_, statErr := os.Stat(lockfilePath)
 	if statErr == nil {
 		fmt.Printf("%s%s", infoStyle, "running npm install\n")
-		exec.Command("npm install")
-		os.Exit(0)
+		utils.ExecuteCommand("npm", "install")
 	}
 	lockfilePath = fmt.Sprint(cwd, "/yarn.lock")
 	_, statErr = os.Stat(lockfilePath)
 	if statErr == nil {
 		fmt.Printf("%s%s", infoStyle, "running yarn install\n")
-		exec.Command("yarn install")
-		os.Exit(0)
+		utils.ExecuteCommand("yarn", "install")
 	}
 	lockfilePath = fmt.Sprint(cwd, "/pnpm-lock.yaml")
 	_, statErr = os.Stat(lockfilePath)
 	if statErr == nil {
 		fmt.Printf("%s%s", infoStyle, "running pnpm install\n")
-		exec.Command("pnpm install")
-		os.Exit(0)
+		utils.ExecuteCommand("pnpm", "install")
 	}
 }
 
 func executeDefault() {
-	cwd, _ := os.Getwd()
 	packageManagerFile := fmt.Sprint(cwd, "/package.json")
 	_, statErr := os.Stat(packageManagerFile)
 	if statErr == nil {
 		fmt.Println("%s%s", infoStyle, "No lock file found. Running npm install")
-		exec.Command("npm install")
-		os.Exit(0)
+		utils.ExecuteCommand("npm", "install")
 	}
 	fmt.Printf("%sNo relevant files found in %s\n", chalk.Red, cwd)
 	os.Exit(1)

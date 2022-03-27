@@ -104,5 +104,6 @@ dist
 .tern-port
 
 dist/
+example/
 
 mono-cli
