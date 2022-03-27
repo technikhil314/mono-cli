@@ -1,0 +1,51 @@
+lockfileVersion: 5.3
+
+specifiers:
+  is-even: ^1.0.0
+
+dependencies:
+  is-even: artifactory.g.devqa.gcp.dev.paypalinc.com/is-even/1.0.0
+
+packages:
+
+  artifactory.g.devqa.gcp.dev.paypalinc.com/is-buffer/1.1.6:
+    resolution: {integrity: sha1-76ouqdqg16suoTqXsritUf776L4=, registry: https://npm.paypal.com/, tarball: https://artifactory.g.devqa.gcp.dev.paypalinc.com/artifactory/api/npm/npm-all/is-buffer/-/is-buffer-1.1.6.tgz}
+    name: is-buffer
+    version: 1.1.6
+    dev: false
+
+  artifactory.g.devqa.gcp.dev.paypalinc.com/is-even/1.0.0:
+    resolution: {integrity: sha1-drUFX7rY0pSoa2qUkBXhyXtxfAY=, registry: https://npm.paypal.com/, tarball: https://artifactory.g.devqa.gcp.dev.paypalinc.com/artifactory/api/npm/npm-all/is-even/-/is-even-1.0.0.tgz}
+    name: is-even
+    version: 1.0.0
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      is-odd: artifactory.g.devqa.gcp.dev.paypalinc.com/is-odd/0.1.2
+    dev: false
+
+  artifactory.g.devqa.gcp.dev.paypalinc.com/is-number/3.0.0:
+    resolution: {integrity: sha1-JP1iAaR4LPUFYcgQJ2r8fRLXEZU=, registry: https://npm.paypal.com/, tarball: https://artifactory.g.devqa.gcp.dev.paypalinc.com/artifactory/api/npm/npm-all/is-number/-/is-number-3.0.0.tgz}
+    name: is-number
+    version: 3.0.0
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      kind-of: artifactory.g.devqa.gcp.dev.paypalinc.com/kind-of/3.2.2
+    dev: false
+
+  artifactory.g.devqa.gcp.dev.paypalinc.com/is-odd/0.1.2:
+    resolution: {integrity: sha1-vFc7XONx7yqtbm9JeZtyvvE5eKc=, registry: https://npm.paypal.com/, tarball: https://artifactory.g.devqa.gcp.dev.paypalinc.com/artifactory/api/npm/npm-all/is-odd/-/is-odd-0.1.2.tgz}
+    name: is-odd
+    version: 0.1.2
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      is-number: artifactory.g.devqa.gcp.dev.paypalinc.com/is-number/3.0.0
+    dev: false
+
+  artifactory.g.devqa.gcp.dev.paypalinc.com/kind-of/3.2.2:
+    resolution: {integrity: sha1-MeohpzS6ubuw8yRm2JOupR5KPGQ=, registry: https://npm.paypal.com/, tarball: https://artifactory.g.devqa.gcp.dev.paypalinc.com/artifactory/api/npm/npm-all/kind-of/-/kind-of-3.2.2.tgz}
+    name: kind-of
+    version: 3.2.2
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      is-buffer: artifactory.g.devqa.gcp.dev.paypalinc.com/is-buffer/1.1.6
+    dev: false
