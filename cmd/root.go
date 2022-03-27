@@ -8,7 +8,7 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "mono",
-	Short: "A cli that works seamlessly and consistently across all your projects"
+	Short: "A cli that works seamlessly and consistently across all your projects",
 }
 
 func Execute() {
