@@ -3,8 +3,8 @@
 Project based aliases for streamline your build and development flow.
 
 # Problem
-
-Right now to run new project you have to do the following
+ 
+Right now to run new project (where you are new to the project) you have to do the following
 
 1. read the docs just to find what should you run to get your development environment up
 2. But over the years dues tools like npm,yarn,maven,gradle the commands have some de-facto standard viz
