@@ -1,9 +1,9 @@
 # mono-cli
 
-Project based aliases for streamline your build and development flow.
+A single command to do all your tasks across any project. This cli aims to supports any runtime, language, framework, package manager, test framework etc.
 
 # Problem
- 
+
 Right now to run new project (where you are new to the project) you have to do the following
 
 1. read the docs just to find what should you run to get your development environment up
@@ -16,6 +16,7 @@ Right now to run new project (where you are new to the project) you have to do t
 # Solution
 
 1. This cli tries to abstract away the actual commands as these commands are very tightly coupled with the framework or tech stack you are choosing.
+2. The idea is to give you abstraction on top of some industry standard commands to get rid of your hustle.
 
 # How does it work
 
@@ -27,7 +28,7 @@ Right now to run new project (where you are new to the project) you have to do t
 1. imagine you have to jump between multiple projects like nextjs, create-react-app, remix.run etc.
 2. When you jump from nextjs to create-react-app the command change from `npm run dev` to `npm start`
 3. And you have to either recall that or check in the docs
-4. With mono-cli you have to remember just the verbs like install, buils, clean, start etc and prefix them with `mono-cli` and you have one command doing same job across projects.
+4. With mono-cli you have to remember just the verbs like install, build, clean, start etc and prefix them with `mono` and you have one command doing same job across projects.
 5. mono-cli internally detects things like what runtime, package manager, dev start commands to run and runs those commands on your behalf.
 6. See the [usage](#usage) section below to see the commands and their defaults
 
@@ -58,12 +59,13 @@ cp ./mono /usr/local/bin
 2. This cli follows a Unix standard command pattern so any arguments after `--` will be passed further down to actual commands like `mvn`, `npm` etc
 3. and then run following commands for each described task
 
-   | command      | Purpose                            | Supports                     | Depends on                                             | Default                                    |
-   | ------------ | ---------------------------------- | ---------------------------- | ------------------------------------------------------ | ------------------------------------------ |
-   | mono install | install dependancies               | npm, yarn, pnpn, lerna       | lock files or monorepo config files                    | if no lock file found then defaults to npm |
-   | mono build   | build your project                 | webpack, vite and frameworks | framework or bundler <br/> config file in project root | defaults to `npm run build`                |
-   | mono clean   | cleans your build directory        | webpack, vite and frameworks | framework or bundler <br/> config file in project root | defaults to `npm run clean`                |
-   | mono start   | start your development environment | webpack, vite and frameworks | framework or bundler <br/> config file in project root | defaults to `npm run start`                |
+   | command      | Purpose                                                                                         | Supports                                    | Depends on                          | Default                                    |
+   | ------------ | ----------------------------------------------------------------------------------------------- | ------------------------------------------- | ----------------------------------- | ------------------------------------------ |
+   | mono install | install all dependancies. <br/> as of now individual package installation <br/>is not supported | npm, yarn, pnpn, lerna, mvn, gradle, go mod | lock files or monorepo config files | if no lock file found then defaults to npm |
+
+# ⚠️ Notice
+
+This is still a WIP project. Feel free to raise issues, contribute or suggest. TIA.
 
 # License
 
