@@ -53,15 +53,34 @@ tar -xvzf <path to the zip you downloaded>
 cp ./mono /usr/local/bin
 ```
 
+# Default subcommand nomenclature
+
+| command         | Purpose                                    | Current support  |
+| --------------- | ------------------------------------------ | ---------------- |
+| bootstrap       | Install all dependancies mentioned in file | :heavycheckmark: |
+| install         | Install individual depndancy               | TO DO            |
+| build           | build for production deployment            | TO DO            |
+| devbuild        | build with robust debugging enables        | TO DO            |
+| lint            | run linter                                 | TO DO            |
+| test            | run all tests                              | TO DO            |
+| testfile        | run tests in written in a file             | TO DO            |
+| testpattern     | run all tests that match a pattern         | TO DO            |
+| cover           | run all tests and generate coverage report | TO DO            |
+| clean           | delete all dependancies                    | TO DO            |
+| cleancache      | clear package managers cache               | TO DO            |
+| cleanbuildcache | clear build cache                          | TO DO            |
+
 # Usage
 
 1. Add this code to your favourite shell init script
 2. This cli follows a Unix standard command pattern so any arguments after `--` will be passed further down to actual commands like `mvn`, `npm` etc
 3. and then run following commands for each described task
 
-   | command      | Purpose                                                                                         | Supports                                    | Depends on                          | Default                                    |
-   | ------------ | ----------------------------------------------------------------------------------------------- | ------------------------------------------- | ----------------------------------- | ------------------------------------------ |
-   | mono install | install all dependancies. <br/> as of now individual package installation <br/>is not supported | npm, yarn, pnpn, lerna, mvn, gradle, go mod | lock files or monorepo config files | if no lock file found then defaults to npm |
+# Currently supported commands
+
+| command        | Purpose                   | Supports                                    | Depends on                          | Default                                    |
+| -------------- | ------------------------- | ------------------------------------------- | ----------------------------------- | ------------------------------------------ |
+| mono bootstrap | install all dependancies. | npm, yarn, pnpn, lerna, mvn, gradle, go mod | lock files or monorepo config files | if no lock file found then defaults to npm |
 
 # ⚠️ Notice
 
