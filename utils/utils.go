@@ -5,12 +5,17 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"strings"
+
+	"github.com/ttacon/chalk"
 )
 
 var cwd, cwdErr = os.Getwd()
+var infoStyle = chalk.Yellow.NewStyle().WithBackground(chalk.Black)
 
-func ExecuteCommand(cmdName string, args ...string) {
-	out, err := exec.Command(cmdName, args...).Output()
+func ExecuteCommand(args ...string) {
+	fmt.Printf("%s%s%s", infoStyle, "running ", strings.Join(args, " "))
+	out, err := exec.Command(args[0], args...).Output()
 	if err != nil {
 		log.Fatal(err)
 		os.Exit(1)
