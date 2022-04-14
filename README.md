@@ -78,20 +78,20 @@ cp ./mono /usr/local/bin
 
 # Current support
 
-| command         | npm                | yarn               | pnpm               | lerna                         |
-| --------------- | ------------------ | ------------------ | ------------------ | ----------------------------- |
-| bootstrap       | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:            |
-| install         | :white_check_mark: | :white_check_mark: | :white_check_mark: | :negative_squared_cross_mark: |
-| build           | TODO               | TODO               | TODO               | TODO                          |
-| devbuild        | TODO               | TODO               | TODO               | TODO                          |
-| lint            | TODO               | TODO               | TODO               | TODO                          |
-| test            | TODO               | TODO               | TODO               | TODO                          |
-| testfile        | TODO               | TODO               | TODO               | TODO                          |
-| testpattern     | TODO               | TODO               | TODO               | TODO                          |
-| cover           | TODO               | TODO               | TODO               | TODO                          |
-| clean           | TODO               | TODO               | TODO               | TODO                          |
-| cleancache      | TODO               | TODO               | TODO               | TODO                          |
-| cleanbuildcache | TODO               | TODO               | TODO               | TODO                          |
+| command         | npm                | yarn               | pnpm               | lerna              |
+| --------------- | ------------------ | ------------------ | ------------------ | ------------------ |
+| bootstrap       | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| install         | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                |
+| build           | TODO               | TODO               | TODO               | TODO               |
+| devbuild        | TODO               | TODO               | TODO               | TODO               |
+| lint            | TODO               | TODO               | TODO               | TODO               |
+| test            | TODO               | TODO               | TODO               | TODO               |
+| testfile        | TODO               | TODO               | TODO               | TODO               |
+| testpattern     | TODO               | TODO               | TODO               | TODO               |
+| cover           | TODO               | TODO               | TODO               | TODO               |
+| clean           | TODO               | TODO               | TODO               | TODO               |
+| cleancache      | TODO               | TODO               | TODO               | TODO               |
+| cleanbuildcache | TODO               | TODO               | TODO               | TODO               |
 
 # ⚠️ Notice
 
