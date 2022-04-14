@@ -55,20 +55,20 @@ cp ./mono /usr/local/bin
 
 # Default subcommand nomenclature
 
-| command         | Purpose                                    | Current support  |
-| --------------- | ------------------------------------------ | ---------------- |
-| bootstrap       | Install all dependancies mentioned in file | :heavycheckmark: |
-| install         | Install individual depndancy               | TO DO            |
-| build           | build for production deployment            | TO DO            |
-| devbuild        | build with robust debugging enables        | TO DO            |
-| lint            | run linter                                 | TO DO            |
-| test            | run all tests                              | TO DO            |
-| testfile        | run tests in written in a file             | TO DO            |
-| testpattern     | run all tests that match a pattern         | TO DO            |
-| cover           | run all tests and generate coverage report | TO DO            |
-| clean           | delete all dependancies                    | TO DO            |
-| cleancache      | clear package managers cache               | TO DO            |
-| cleanbuildcache | clear build cache                          | TO DO            |
+| command         | Purpose                                    | Current support    |
+| --------------- | ------------------------------------------ | ------------------ |
+| bootstrap       | Install all dependancies mentioned in file | :white_check_mark: |
+| install         | Install individual depndancy               | TO DO              |
+| build           | build for production deployment            | TO DO              |
+| devbuild        | build with robust debugging enables        | TO DO              |
+| lint            | run linter                                 | TO DO              |
+| test            | run all tests                              | TO DO              |
+| testfile        | run tests in written in a file             | TO DO              |
+| testpattern     | run all tests that match a pattern         | TO DO              |
+| cover           | run all tests and generate coverage report | TO DO              |
+| clean           | delete all dependancies                    | TO DO              |
+| cleancache      | clear package managers cache               | TO DO              |
+| cleanbuildcache | clear build cache                          | TO DO              |
 
 # Usage
 
@@ -76,11 +76,22 @@ cp ./mono /usr/local/bin
 2. This cli follows a Unix standard command pattern so any arguments after `--` will be passed further down to actual commands like `mvn`, `npm` etc
 3. and then run following commands for each described task
 
-# Currently supported commands
+# Current support
 
-| command        | Purpose                   | Supports                                    | Depends on                          | Default                                    |
-| -------------- | ------------------------- | ------------------------------------------- | ----------------------------------- | ------------------------------------------ |
-| mono bootstrap | install all dependancies. | npm, yarn, pnpn, lerna, mvn, gradle, go mod | lock files or monorepo config files | if no lock file found then defaults to npm |
+| command         | npm                | yarn               | pnpm               | lerna                         |
+| --------------- | ------------------ | ------------------ | ------------------ | ----------------------------- |
+| bootstrap       | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:            |
+| install         | :white_check_mark: | :white_check_mark: | :white_check_mark: | :negative_squared_cross_mark: |
+| build           | TODO               | TODO               | TODO               | TODO                          |
+| devbuild        | TODO               | TODO               | TODO               | TODO                          |
+| lint            | TODO               | TODO               | TODO               | TODO                          |
+| test            | TODO               | TODO               | TODO               | TODO                          |
+| testfile        | TODO               | TODO               | TODO               | TODO                          |
+| testpattern     | TODO               | TODO               | TODO               | TODO                          |
+| cover           | TODO               | TODO               | TODO               | TODO                          |
+| clean           | TODO               | TODO               | TODO               | TODO                          |
+| cleancache      | TODO               | TODO               | TODO               | TODO                          |
+| cleanbuildcache | TODO               | TODO               | TODO               | TODO                          |
 
 # ⚠️ Notice
 

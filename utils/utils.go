@@ -13,9 +13,9 @@ import (
 var cwd, cwdErr = os.Getwd()
 var infoStyle = chalk.Yellow.NewStyle().WithBackground(chalk.Black)
 
-func ExecuteCommand(args ...string) {
-	fmt.Printf("%s%s%s", infoStyle, "running ", strings.Join(args, " "))
-	out, err := exec.Command(args[0], args...).Output()
+func ExecuteCommand(cmd string, args ...string) {
+	fmt.Printf("%s%s%s %s\n", infoStyle, "running ", cmd, strings.Join(args, " "))
+	out, err := exec.Command(cmd, args...).Output()
 	if err != nil {
 		log.Fatal(err)
 		os.Exit(1)
